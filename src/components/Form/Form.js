@@ -25,15 +25,10 @@ class Form extends Component {
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    if (!this.state.firstName || !this.state.lastName) {
-      alert("Fill out your first and last name please!");
-    } else if (this.state.password.length < 6) {
-      alert(
-        `Choose a more secure password ${this.state.firstName} ${this.state
-          .lastName}`
-      );
+    if (!this.state.title || !this.state.price) {
+      alert("Please fill out more information before submitting!");
     } else {
-      alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
+      alert(`Thank you for adding your item "${this.state.title}"`);
     }
 
     this.setState({
@@ -56,7 +51,7 @@ class Form extends Component {
 			 
 			  <form className="form" style={{margin: '0 auto'}}>
           <input
-            value={this.state.firstName}
+            value={this.state.title}
             name="title"
             onChange={this.handleInputChange}
             type="text"
@@ -64,7 +59,7 @@ class Form extends Component {
           />
 					<br></br><br></br>
           <input
-            value={this.state.lastName}
+            value={this.state.price}
             name="price"
             onChange={this.handleInputChange}
             type="number"
@@ -72,7 +67,7 @@ class Form extends Component {
           />
 					<br></br><br></br>
           <input
-            value={this.state.password}
+            value={this.state.description}
             name="description"
             onChange={this.handleInputChange}
             type="text"
