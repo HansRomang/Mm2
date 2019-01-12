@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Form.css";
-
+console.log("hi");
 class Form extends Component {
   // Setting the component's initial state
   state = {
@@ -61,6 +61,7 @@ class Form extends Component {
             type="text"
             placeholder="Username"
           />
+					<br></br><br></br>
           <input
             value={this.state.password}
             name="password"
@@ -68,7 +69,9 @@ class Form extends Component {
             type="text"
             placeholder="Password"
           />
+					<br></br><br></br>
           <button onClick={this.handleFormSubmit}  style={{margin: "0 auto"}}>Login</button>
+					<br></br><br></br>
         </form>
       </div>
 		</div>
