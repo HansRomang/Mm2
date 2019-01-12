@@ -53,7 +53,9 @@ class Form extends Component {
 				<h2>
           Login 
         </h2>
+
         <form className="form">
+				<div className="form-group">
           <input
             value={this.state.username}
             name="username"
@@ -61,7 +63,9 @@ class Form extends Component {
             type="text"
             placeholder="Username"
           />
+
 					<br></br><br></br>
+
           <input
             value={this.state.password}
             name="password"
@@ -69,9 +73,13 @@ class Form extends Component {
             type="text"
             placeholder="Password"
           />
+
 					<br></br><br></br>
+
           <button onClick={this.handleFormSubmit}  style={{margin: "0 auto"}}>Login</button>
+
 					<br></br><br></br>
+					</div>
         </form>
       </div>
 		</div>

@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Form extends Component {
   // Setting the component's initial state
   state = {
-    firstName: "",
+    username: "",
     lastName: "",
     password: ""
   };
