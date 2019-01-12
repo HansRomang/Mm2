@@ -9,7 +9,7 @@ class AddItem extends Component {
     return (
 			<div>
 			<Navbar />
-			<div className="container">
+			<div className="container" style={{textAlign: 'center'}}>
 
       <Form>
 

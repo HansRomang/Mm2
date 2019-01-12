@@ -60,6 +60,7 @@ class Form extends Component {
             type="text"
             placeholder="Username"
           />
+					<br></br><br></br>
           <input
             value={this.state.lastName}
             name="password"
@@ -67,7 +68,9 @@ class Form extends Component {
             type="number"
             placeholder="Password"
           />
+					<br></br><br></br>
           <button onClick={this.handleFormSubmit}  style={{margin: "0 auto"}}>Login</button>
+					<br></br><br></br>
         </form>
       </div>
 		</div>

@@ -46,9 +46,9 @@ class Form extends Component {
   render() {
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
-      <div style={{margin: '0 auto', border: '2px solid grey', borderRadius: '5px'}}>
+      <div style={{margin: '0 auto'}}>
        
-			 <div className="col-6" style={{background: 'pink', margin: '0 auto'}}>	
+			 <div className="col-6" style={{margin: '0 auto', border: '2px solid grey', borderRadius: '5px'}}>	
 			  <h2 style={{background: 'pink', margin: '0 auto'}}>
           Add Item {this.state.firstName} {this.state.lastName}
         </h2><br></br>
