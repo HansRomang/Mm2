@@ -48,7 +48,8 @@ class Form extends Component {
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
       <div>
-        <h2>
+       <div className="col-6" style={{background: 'pink', margin: '0 auto'}}>
+				<h2>
           Login {this.state.firstName} {this.state.lastName}
         </h2>
         <form className="form">
@@ -69,6 +70,7 @@ class Form extends Component {
           <button onClick={this.handleFormSubmit}  style={{margin: "0 auto"}}>Login</button>
         </form>
       </div>
+		</div>
     );
   }
 }
