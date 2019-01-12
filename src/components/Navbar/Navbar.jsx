@@ -11,7 +11,7 @@ class Navbar extends Component {
 				<span className="navbar-toggler-icon"></span>
 			</button>
 			<div className="container">
-			<Link className="navbar-brand" to="/">MarketMeet</Link>
+			<Link className="navbar-brand" to="/marketplace">MarketMeet</Link>
 
 			<div className="collapse navbar-collapse" id="containerNavbar">
 				<ul className="navbar-nav ml-auto">

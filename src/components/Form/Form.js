@@ -46,11 +46,11 @@ class Form extends Component {
   render() {
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
-      <div>
-        <h2>
+      <div style={{margin: '0 auto', border: '2px solid grey', borderRadius: '5px'}}>
+        <h2 style={{background: 'pink', margin: '0 auto'}}>
           Add Item {this.state.firstName} {this.state.lastName}
-        </h2>
-        <form className="form">
+        </h2><br></br>
+        <form className="form" style={{margin: '0 auto'}}>
           <input
             value={this.state.firstName}
             name="title"
@@ -58,6 +58,7 @@ class Form extends Component {
             type="text"
             placeholder="Title"
           />
+					<br></br><br></br>
           <input
             value={this.state.lastName}
             name="price"
@@ -65,6 +66,7 @@ class Form extends Component {
             type="number"
             placeholder="Price"
           />
+					<br></br><br></br>
           <input
             value={this.state.password}
             name="description"
@@ -72,6 +74,7 @@ class Form extends Component {
             type="text"
             placeholder="Description"
           />
+					<br></br><br></br>
           <button onClick={this.handleFormSubmit}>Submit</button>
         </form>
       </div>

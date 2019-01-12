@@ -66,7 +66,7 @@ class Form extends Component {
             type="number"
             placeholder="Password"
           />
-          <button onClick={this.handleFormSubmit}>Login</button>
+          <button onClick={this.handleFormSubmit}  style={{margin: "0 auto"}}>Login</button>
         </form>
       </div>
     );
