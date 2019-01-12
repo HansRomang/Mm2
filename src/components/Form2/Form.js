@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Form.css";
-
+console.log("hi");
 class Form extends Component {
   // Setting the component's initial state
   state = {
