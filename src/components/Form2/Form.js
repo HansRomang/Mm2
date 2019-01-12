@@ -27,7 +27,7 @@ class Form extends Component {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
     if (!this.state.firstName || !this.state.lastName) {
-      alert("Fill out your first and last name please!");
+      alert("Fill out your Username and Password");
     } else if (this.state.password.length < 6) {
       alert(
         `Choose a more secure password ${this.state.firstName} ${this.state
