@@ -4,12 +4,12 @@ import "./Form.css";
 class Form extends Component {
   // Setting the component's initial state
   state = {
-    firstName: "",
-    lastName: "",
+    username: "",
     password: ""
   };
 
   handleInputChange = event => {
+		console.log('hit')
     // Getting the value and name of the input which triggered the change
     let value = event.target.value;
     const name = event.target.name;
@@ -45,16 +45,17 @@ class Form extends Component {
   };
 
   render() {
+		console.log(this)
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
       <div>
        <div className="col-6" style={{background: 'pink', margin: '0 auto'}}>
 				<h2>
-          Login {this.state.firstName} {this.state.lastName}
+          Login 
         </h2>
         <form className="form">
           <input
-            value={this.state.firstName}
+            value={this.state.username}
             name="username"
             onChange={this.handleInputChange}
             type="text"
@@ -62,10 +63,10 @@ class Form extends Component {
           />
 					<br></br><br></br>
           <input
-            value={this.state.lastName}
+            value={this.state.password}
             name="password"
             onChange={this.handleInputChange}
-            type="number"
+            type="text"
             placeholder="Password"
           />
 					<br></br><br></br>
