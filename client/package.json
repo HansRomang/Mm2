@@ -1,8 +1,8 @@
 {
   "name": "mm2",
   "version": "0.1.0",
-	"private": true,
-	"proxy": "http://localhost:3001",
+  "private": true,
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "express": "^4.16.4",
     "mongoose": "^5.4.4",
