@@ -9,6 +9,6 @@ const itemsSchema = new Schema({
 	date: { type: Date, default: Date.now }
 });
 
-const Items = mongoose.model("Item", itemsSchema);
+const Items = mongoose.model("Items", itemsSchema);
 
 module.exports = Items;

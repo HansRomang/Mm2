@@ -1,3 +1,3 @@
 module.exports = {
-  Item: require("./items")
+  Items: require("./items")
 };

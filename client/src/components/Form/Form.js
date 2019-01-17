@@ -1,21 +1,18 @@
 import React, { Component } from "react";
-
+import API from "../../utils/API";
 class Form extends Component {
   // Setting the component's initial state
   state = {
-    username: "",
-    lastName: "",
-    password: ""
+    items: [],
+    title: "",
+		price: "",
+		description: ""
   };
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
     let value = event.target.value;
     const name = event.target.name;
-
-    if (name === "password") {
-      value = value.substring(0, 15);
-    }
     // Updating the input's state
     this.setState({
       [name]: value
@@ -29,7 +26,13 @@ class Form extends Component {
       alert("Please fill out more information before submitting!");
     } else {
       alert(`Thank you for adding your item "${this.state.title}"`);
-    }
+		}
+		
+		API.createItem({
+			title:this.state.title,
+			price:this.state.price,
+			description:this.state.description
+		})
 
     this.setState({
       title: "",
@@ -49,7 +52,7 @@ class Form extends Component {
         </h2><br></br>
 	
 			 
-			  <form className="form" style={{margin: '0 auto'}}>
+			  <form className="form" style={{margin: '0 auto'}} onSubmit={this.handleFormSubmit}>
           <input
             value={this.state.title}
             name="title"
@@ -74,7 +77,7 @@ class Form extends Component {
             placeholder="Description"
           />
 					<br></br><br></br>
-          <button onClick={this.handleFormSubmit}>Submit</button>
+          <button type="submit">Submit</button>
         </form>
 				</div>
       </div>
