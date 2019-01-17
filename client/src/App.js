@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.css';
-import AddAnItem from "./routes/Sell-an-item";
-import Login from "./routes/Login";
-import Marketplace from "./routes/Marketplace";
+import AddAnItem from "./pages/Sell-an-item";
+import Login from "./pages/Login";
+import Marketplace from "./pages/Marketplace";
 
-import About from './routes/About.jsx';
+import About from './pages/About.js';
 
 
 
