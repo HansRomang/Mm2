@@ -1,3 +1,4 @@
 module.exports = {
-  Items: require("./items")
+	Items: require("./items"),
+	User: require("./user-model")
 };

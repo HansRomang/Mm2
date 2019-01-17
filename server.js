@@ -14,8 +14,9 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 mongoose.connect(
-	process.env.MONGODB_URI || "mongodb://localhost/items"
+	process.env.MONGODB_URI || "mongodb://localhost/everything123"
 );
+
 
 app.listen(PORT, function(){
 	console.log("API workin");
