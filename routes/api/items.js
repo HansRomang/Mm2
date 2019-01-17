@@ -3,7 +3,8 @@ const itemsController = require("../../controllers/itemsController");
 
 // Matches with "/api/books"
 router.route("/")
-	.post(itemsController.create);
+	.post(itemsController.create)
+	.get(itemsController.findAll)
 // Matches with "/api/books/:id"
 router
   .route("/:id")
