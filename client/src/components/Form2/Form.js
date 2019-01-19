@@ -7,7 +7,8 @@ class Form extends Component {
   state = {
 		users: [],
     username: "",
-    password: ""
+		password: "",
+		email: ""
   };
 
   handleInputChange = event => {
@@ -42,12 +43,14 @@ class Form extends Component {
 		API.createUser({
 			username:this.state.username,
 			password:this.state.password,
+			email:this.state.email
 
 		})
 
     this.setState({
 			username: "",
-			password: ""
+			password: "",
+			email: ""
     });
   };
 
@@ -79,6 +82,16 @@ class Form extends Component {
             onChange={this.handleInputChange}
             type="text"
             placeholder="Password"
+          />
+
+					<br></br><br></br>
+
+          <input
+            value={this.state.email}
+            name="email"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="Email"
           />
 
 					<br></br><br></br>
