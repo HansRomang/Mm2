@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import "./Form.css";
+import API from '../../utils/API';
 console.log("hi");
 class Form extends Component {
   // Setting the component's initial state
   state = {
+		users: [],
     username: "",
     password: ""
   };
@@ -26,7 +28,7 @@ class Form extends Component {
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    if (!this.state.firstName || !this.state.lastName) {
+    if (!this.state.username || !this.state.password) {
       alert("Fill out your Username and Password");
     } else if (this.state.password.length < 6) {
       alert(
@@ -34,13 +36,18 @@ class Form extends Component {
           .lastName}`
       );
     } else {
-      alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
-    }
+      alert(`Hello ${this.state.username}`);
+		}
+		
+		API.createUser({
+			username:this.state.username,
+			password:this.state.password,
+
+		})
 
     this.setState({
-      title: "",
-      price: "",
-      description: ""
+			username: "",
+			password: ""
     });
   };
 
@@ -54,7 +61,7 @@ class Form extends Component {
           Login 
         </h2>
 
-        <form className="form">
+        <form className="form" onSubmit={this.handleFormSubmit}>
 				<div className="form-group">
           <input
             value={this.state.username}
@@ -76,7 +83,7 @@ class Form extends Component {
 
 					<br></br><br></br>
 
-          <button onClick={this.handleFormSubmit}  style={{margin: "0 auto"}}>Login</button>
+          <button type="submit">Submit</button>
 
 					<br></br><br></br>
 					</div>
