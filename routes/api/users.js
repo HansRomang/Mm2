@@ -3,8 +3,9 @@ const loginController = require("../../controllers/loginController");
 
 // Matches with "/api/books"
 router.route("/")
+	.get(loginController.findAll)
 	.post(loginController.create)
-	.get(loginController.findAll);
+;
 
 // Matches with "/api/books/:id"
 router

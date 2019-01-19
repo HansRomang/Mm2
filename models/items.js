@@ -6,7 +6,9 @@ const itemsSchema = new Schema({
 	// add image
   price: { type: Number, required: true },
 	description: { type:String, required: true},
+	location: { type:String, require: true},
 	date: { type: Date, default: Date.now }
+	
 });
 
 const Items = mongoose.model("Items", itemsSchema);

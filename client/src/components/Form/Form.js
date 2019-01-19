@@ -31,13 +31,15 @@ class Form extends Component {
 		API.createItem({
 			title:this.state.title,
 			price:this.state.price,
-			description:this.state.description
+			description:this.state.description,
+			location:this.state.location
 		})
 
     this.setState({
       title: "",
       price: "",
-      description: ""
+			description: "",
+			location: ""
     });
   };
 
@@ -75,6 +77,13 @@ class Form extends Component {
             onChange={this.handleInputChange}
             type="text"
             placeholder="Description"
+          />
+					<input
+            value={this.state.location}
+            name="location"
+            onChange={this.handleInputChange}
+            type="text"
+            placeholder="Where are you selling this at?"
           />
 					<br></br><br></br>
           <button type="submit">Submit</button>
