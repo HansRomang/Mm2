@@ -78,12 +78,13 @@ class Form extends Component {
             type="text"
             placeholder="Description"
           />
+					<br></br><br></br>
 					<input
             value={this.state.location}
             name="location"
             onChange={this.handleInputChange}
             type="text"
-            placeholder="Where are you selling this at?"
+            placeholder="Location"
           />
 					<br></br><br></br>
           <button type="submit">Submit</button>

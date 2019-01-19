@@ -33,7 +33,7 @@ class Marketplace extends Component {
 
 			<React.Fragment>
 			<Navbar />
-			<Container fluid>
+			<Container>
 				<Row>
 					<Jumbotron2 title="The Market."/>
 				</Row>

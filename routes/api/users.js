@@ -7,7 +7,7 @@ router.route("/")
 	.post(loginController.create)
 ;
 
-// Matches with "/api/books/:id"
+// Matches with "/api/items/:id"
 router
   .route("/:id")
 	.get(loginController.findById)

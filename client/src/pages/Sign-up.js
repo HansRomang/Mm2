@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Navbar from '../components/Navbar/Navbar';
 import Jumbotron2 from "../components/Jumbotron2/Jumbotron2.jsx";
-import Form from '../components/LoginForm/Form.js';
+import Form from '../components/SignUpForm/Form';
 
-class Login extends Component {
+class SignUp extends Component {
 	render() {
 		return (
 			<div>
@@ -24,4 +24,4 @@ class Login extends Component {
 	}
 }
 
-export default Login;
+export default SignUp;
