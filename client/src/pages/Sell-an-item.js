@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from '../components/Navbar/Navbar';
-
-import Form from '../components/Form/Form.js';
+import Form from '../components/AddItemForm/Form.js';
 
 class AddItem extends Component {
   render() {
