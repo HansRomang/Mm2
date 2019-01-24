@@ -7,7 +7,9 @@ const itemsSchema = new Schema({
   price: { type: Number, required: true },
 	description: { type:String, required: true},
 	location: { type:String, require: true},
-	date: { type: Date, default: Date.now }
+	date: { type: Date, default: Date.now },
+	cloudUrl: { type: String, require: true},
+	cloudPublicId: { type: String, require: true},
 	
 });
 

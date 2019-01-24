@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const itemsController = require("../../controllers/itemsController");
 
+router.route("/uploadAsset")
+	.post(itemsController.uploadAsset);
 // Matches with "/api/items"
 router.route("/")
 	.get(itemsController.findAll)
