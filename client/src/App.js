@@ -28,6 +28,15 @@ class AppRouter extends Component {
 		})
 	}
 
+	handleAuthLogout = (authObj) => {
+		console.log(authObj)
+		this.setState({
+			authenticated:false,
+			displayName: "",
+			user: {}
+		})
+	}
+
 	render() {
 		return (
 			<Router>
@@ -35,9 +44,10 @@ class AppRouter extends Component {
 					<Navbar 
 						authenticated={this.state.authenticated} 
 						displayName={this.state.displayName}
+						handleAuthLogout={this.handleAuthLogout}
 					/>
 					<Route path="/" exact component={About} />
-					<Route path="/login/" render={() => <Login handleAuthRes={this.handleAuthRes}/>} />
+					<Route path="/login/" render={() => <Login handleAuthRes={this.handleAuthRes} />} />
 					<Route path="/add-item/" component={AddAnItem} />
 					<Route path="/marketplace" component={Marketplace} />
 					<Route path="/sign-up" component={SignUp} />

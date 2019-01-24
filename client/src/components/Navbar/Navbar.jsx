@@ -4,6 +4,12 @@ import './Navbar.css';
 
 class Navbar extends Component {
 
+	constructor(props) {
+		super(props)
+		console.log(props);
+		
+	};
+
 	render() {
 		return (
 			
@@ -24,9 +30,16 @@ class Navbar extends Component {
 					</li>
 					{
 						this.props.authenticated &&
-						<li className="nav-item">
-							<Link className="nav-link" to="/add-item">Sell An Item</Link>
-						</li>
+						<div>
+							<li className="nav-item">
+								<Link className="nav-link" to="/add-item">Sell An Item</Link>
+							</li>
+							<li className="nav-item">
+								<button onClick={this.props.handleAuthLogout}>
+									Logout
+								</button>
+							</li>
+						</div>
 					}
 				</ul>
 				<h4>{this.props.displayName}</h4>
