@@ -29,5 +29,13 @@ module.exports = {
 					console.log(err);
 					res.status(422).json(err)
 				});
-  }
+	},
+	login: function(req, res) {
+		db.User
+		.find({username: req.body.username})
+		.then(user => {
+			res.send({user:user, status:200, message:"Login Successful!"})
+		})
+
+	}
 };

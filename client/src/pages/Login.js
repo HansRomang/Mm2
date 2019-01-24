@@ -7,13 +7,12 @@ class Login extends Component {
 	render() {
 		return (
 			<div>
-				<Navbar />
 				<Jumbotron2 title="Login." />
 				<div className="container">
 					<div className="row">
 						<div className="col-6" style={{background: 'pink', margin: '0 auto', textAlign: 'center'}}>
 
-							<Form>
+							<Form handleAuthRes={this.props.handleAuthRes}>
 
 							</Form>
 						</div>

@@ -7,6 +7,9 @@ router.route("/")
 	.post(loginController.create)
 ;
 
+router.route("/login")
+.post(loginController.login)
+
 // Matches with "/api/items/:id"
 router
   .route("/:id")

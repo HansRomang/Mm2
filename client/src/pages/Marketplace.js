@@ -32,33 +32,32 @@ class Marketplace extends Component {
 		return (
 
 			<React.Fragment>
-			<Navbar />
-			<Container>
-				<Row>
-					<Jumbotron2 title="The Market."/>
-				</Row>
+				<Container>
+					<Row>
+						<Jumbotron2 title="The Market."/>
+					</Row>
 					<Row>
 						<Col size="md-12">
 						{this.state.items.length ? (
-              <List>
-                {this.state.items.map(item => {
-                  return (
-                    <ListItem key={item._id}>
-                      <a href={"/items/" + item._id}>
-                        <strong>
-                          {item.title} for {item.price}
-                        </strong>
-                      </a>
-                    </ListItem>
-                  );
-                })}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
+							<List>
+								{this.state.items.map(item => {
+									return (
+										<ListItem key={item._id}>
+											<a href={"/items/" + item._id}>
+												<strong>
+													{item.title} for {item.price}
+												</strong>
+											</a>
+										</ListItem>
+									);
+								})}
+							</List>
+						) : (
+							<h3>No Results to Display</h3>
+						)}
 						</Col>
 					</Row>
-			</Container>
+				</Container>
 			</React.Fragment>
 		);
 	}
