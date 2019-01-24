@@ -7,6 +7,7 @@ import Marketplace from "./pages/Marketplace";
 import About from './pages/About.js';
 import SignUp from './pages/Sign-up';
 import Navbar from './components/Navbar/Navbar';
+import Items from './pages/Items';
 
 
 
@@ -51,6 +52,7 @@ class AppRouter extends Component {
 					<Route path="/add-item/" component={AddAnItem} />
 					<Route path="/marketplace" component={Marketplace} />
 					<Route path="/sign-up" component={SignUp} />
+					<Route path="/items" component={Items} />
 				</React.Fragment>
 			</Router>
 		)
