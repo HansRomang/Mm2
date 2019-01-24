@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar/Navbar';
 import Jumbotron2 from "../components/Jumbotron2/Jumbotron2";
 import API from "../utils/API";
 import {Col,Row,Container} from "../components/Grid";
