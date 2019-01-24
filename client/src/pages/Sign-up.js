@@ -7,7 +7,6 @@ class SignUp extends Component {
 	render() {
 		return (
 			<div>
-				<Navbar />
 				<Jumbotron2 title="Login." />
 				<div className="container">
 					<div className="row">
