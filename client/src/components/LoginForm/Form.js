@@ -39,9 +39,12 @@ class Form extends Component {
       alert(`Hello ${this.state.username}`);
 		}
 		
-		API.createUser({
+		API.getUser({
 			username:this.state.username,
 			password:this.state.password
+		}).then(res => {
+			console.log(res);
+			this.props.handleAuthRes(res.data.user[0])
 		})
 
     this.setState({
@@ -85,7 +88,7 @@ class Form extends Component {
 
 					<br></br><br></br>
 
-          <button type="submit">Login</button>
+          <button type="submit" onClick={this.props.login}>Login</button>
 
 					<br></br><br></br>
 					</div>
