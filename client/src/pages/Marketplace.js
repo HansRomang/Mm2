@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
 import Jumbotron2 from "../components/Jumbotron2/Jumbotron2";
 import API from "../utils/API";
@@ -38,16 +39,17 @@ class Marketplace extends Component {
 					</Row>
 					<Row>
 						<Col size="md-12">
-						{this.state.items.length ? (
+						{
+							this.state.items.length ? (
 							<List>
 								{this.state.items.map(item => {
 									return (
 										<ListItem key={item._id}>
-											<a href={"/items/" + item._id}>
+											<Link to={"/items/" + item._id}>
 												<strong>
 													{item.title} for {item.price}
 												</strong>
-											</a>
+											</Link>
 										</ListItem>
 									);
 								})}
