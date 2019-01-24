@@ -44,6 +44,7 @@ class Marketplace extends Component {
 								{this.state.items.map(item => {
 									return (
 										<ListItem key={item._id}>
+											<img width="50px" src={item.cloudUrl?item.cloudUrl:"http://www.fulltimefba.com/wp-content/uploads/2014/03/Lost-Box-300x300.jpg"}/>
 											<Link to={"/items/" + item._id}>
 												<strong>
 													{item.title} for {item.price}

@@ -11,7 +11,8 @@ class Items extends Component {
 		item:{
 			title: "superman",
 			price: "400",
-			description: "plane? bird? NO!"
+			description: "plane? bird? NO!",
+			cloudUrl: "http://www.fulltimefba.com/wp-content/uploads/2014/03/Lost-Box-300x300.jpg"
 		},
 
 
@@ -44,6 +45,7 @@ class Items extends Component {
 						<Col size="md-4">Next Button</Col>
 					</Row>
 					<Row>{this.state.item.description}</Row>
+					<img src={this.state.item.cloudUrl}/>
 				</Container>
 			</React.Fragment>
 		)

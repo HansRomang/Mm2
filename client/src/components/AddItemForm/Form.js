@@ -1,12 +1,19 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import imageCompressor from "./imageCompressor";
+import axios from 'axios';
 class Form extends Component {
   // Setting the component's initial state
   state = {
     items: [],
     title: "",
 		price: "",
-		description: ""
+		description: "",
+		cloudPublicId:"",
+		cloudUrl:"",
+		assetToUploadSrc: "https://d30y9cdsu7xlg0.cloudfront.net/png/396915-200.png",
+		assetToUpload: null,
+		location: "",
   };
 
   handleInputChange = event => {
@@ -20,8 +27,10 @@ class Form extends Component {
   };
 
   handleFormSubmit = event => {
-    // Preventing the default behavior of the form submit (which is to refresh the page)
-    event.preventDefault();
+		// Preventing the default behavior of the form submit (which is to refresh the page)
+		if(event){
+			event.preventDefault();
+		}
     if (!this.state.title || !this.state.price) {
       alert("Please fill out more information before submitting!");
     } else {
@@ -32,7 +41,13 @@ class Form extends Component {
 			title:this.state.title,
 			price:this.state.price,
 			description:this.state.description,
-			location:this.state.location
+			location:this.state.location,
+			cloudUrl: this.state.cloudUrl,
+			cloudPublicId: this.state.cloudPublicId
+		}).then(res => {
+			console.log(res)
+		}).catch(err => {
+			console.log(err)
 		})
 
     this.setState({
@@ -41,7 +56,42 @@ class Form extends Component {
 			description: "",
 			location: ""
     });
-  };
+	};
+	setImage = (e) => {
+    if(this.overLimit){
+      alert("Max assets reached. Delete an asset to upload something new.")
+      return
+    }
+    if(!e.target.files[0]){return}
+    let self = this
+    this.setState({showLoadingModel:true, loadingModelHeader:"Optimizing..."})
+    imageCompressor.handleImageUpload(e, function(img){
+      // console.log(img)
+      var reader = new FileReader();
+      reader.onloadend = function() {
+        self.setState({assetToUpload:reader.result})
+      }
+      reader.readAsDataURL(img);
+      let src = window.URL.createObjectURL(img)
+      self.setState({assetToUploadSrc:src, showLoadingModel:false, loadingModelHeader:null})
+    })
+    e.target.value = ''
+	}
+	sendImageToServer = () => {
+    if(!this.state.assetToUpload){return}
+    this.setState({showLoadingModel:true, loadingModelHeader:"Uploading..."})
+    axios.post('/api/items/uploadAsset', {asset:this.state.assetToUpload}).then(res => {
+			// if(res.data.message){alert(res.data.message)}
+			this.state.cloudPublicId = res.data.image.public_id
+			this.state.cloudUrl = res.data.image.url
+			this.setState({assetToUploadSrc:"https://d30y9cdsu7xlg0.cloudfront.net/png/396915-200.png", assetToUpload: null, showLoadingModel:false, loadingModelHeader:null, })
+			this.handleFormSubmit()
+    }).catch(err => {
+			console.log(err)
+      alert("Could not process asset upload at this time.")
+      this.setState({assetToUploadSrc:"https://d30y9cdsu7xlg0.cloudfront.net/png/396915-200.png", assetToUpload: null, showLoadingModel:false, loadingModelHeader:null})
+    })
+  }
 
   render() {
     // Notice how each input has a `value`, `name`, and `onChange` prop
@@ -87,8 +137,16 @@ class Form extends Component {
             placeholder="Location"
           />
 					<br></br><br></br>
+					<div style={{display:'block', margin:"0 auto"}} className="user-asset-manager_one-asset user-asset-manager_new-asset-image">
+            <form  id="assetInput">
+              <input name="asset" type="file" accept="image/*" onChange={(e) => this.setImage(e)} style={{position:"absolute", width:"100%", height:"100%", opacity:"0.0"}}/>
+            </form>
+            <img alt="uploadspace"style={{width:'100%', height:'100%'}} src={this.state.assetToUploadSrc}/>
+          </div>
+					<br></br>
           <button type="submit">Submit</button>
         </form>
+					<button type="button" onClick={this.sendImageToServer}>upload image</button>
 				</div>
       </div>
     );
