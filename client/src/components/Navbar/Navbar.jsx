@@ -18,31 +18,34 @@ class Navbar extends Component {
 					<span className="navbar-toggler-icon"></span>
 				</button>
 			<div className="container">
-			<Link className="navbar-brand" to="/marketplace">MarketMeet</Link>
+				<Link className="navbar-brand" to="/marketplace">MarketMeet</Link>
 
-			<div className="collapse navbar-collapse" id="containerNavbar">
-				<ul className="navbar-nav ml-auto">
-					<li className="nav-item active">
-						<Link className="nav-link" to="/">About<span className="sr-only">(current)</span></Link>
-					</li>
-					<li className="nav-item">
-						<Link className="nav-link" to="/login">Login</Link>
-					</li>
-					{
-						this.props.authenticated &&
-						<div>
+				<div className="collapse navbar-collapse" id="containerNavbar">
+					<ul className="navbar-nav ml-auto">
+						<li className="nav-item">
+							<Link className="nav-link" to="/">About<span className="sr-only">(current)</span></Link>
+						</li>
+						<li className="nav-item">
+							<Link className="nav-link" to="/login">Login</Link>
+						</li>
+						{
+							this.props.authenticated &&
+							<div>
+								<li className="nav-item">
+									<Link className="nav-link" to="/add-item">Sell An Item</Link>
+								</li>
+								<li className="nav-item">
+									<button onClick={this.props.handleAuthLogout}>
+										Logout
+									</button>
+								</li>
+							</div>
+						}
 							<li className="nav-item">
-								<Link className="nav-link" to="/add-item">Sell An Item</Link>
+								<Link className="nav-link" to="/">{this.props.displayName}</Link>
 							</li>
-							<li className="nav-item">
-								<button onClick={this.props.handleAuthLogout}>
-									Logout
-								</button>
-							</li>
-						</div>
-					}
-				</ul>
-				<h4>{this.props.displayName}</h4>
+							
+					</ul>
 				</div>
 			</div>
 		</nav>
