@@ -47,7 +47,7 @@ class Marketplace extends Component {
 											<img width="50px" src={item.cloudUrl?item.cloudUrl:"http://www.fulltimefba.com/wp-content/uploads/2014/03/Lost-Box-300x300.jpg"}/>
 											<Link to={"/items/" + item._id}>
 												<strong>
-													{item.title} for {item.price}
+													{item.title} for ${item.price}
 												</strong>
 											</Link>
 										</ListItem>

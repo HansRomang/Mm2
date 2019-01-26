@@ -101,9 +101,12 @@ class Form extends Component {
 			 <div className="col-6" style={{margin: '0 auto',marginTop:'5%', border: '2px solid grey', borderRadius: '5px'}}>	
 			  <h2 style={{ margin: '0 auto'}}>
           Add Item {this.state.firstName} {this.state.lastName}
-        </h2><hr></hr><br></br>
-	
-			 
+        </h2>
+				<br></br>
+				<h6>
+					Please provide a way of contact in description.
+				</h6>
+				<hr></hr><br></br>
 			  <form className="form" style={{margin: '0 auto'}} onSubmit={this.handleFormSubmit}>
           <input
             value={this.state.title}

@@ -32,20 +32,45 @@ class Items extends Component {
 		return (
 			<React.Fragment>
 				<Container>
-					<Row>
-					{this.state.item.title}
-					</Row>
-					<Row>
-						<Col size="md-6">{this.state.item.price}</Col>
-						<Col size="md-6">{this.state.item.location}</Col>
-					</Row>
-					<Row>
-						<Col size="md-4">Previous Button</Col>
-						<Col size="md-4">Images</Col>
-						<Col size="md-4">Next Button</Col>
-					</Row>
-					<Row>{this.state.item.description}</Row>
-					<img src={this.state.item.cloudUrl}/>
+					<br></br><br></br>
+					<div  style={{border: '2px solid grey', borderRadius: '5px'}}>
+						<Row>
+							<Col size="md-6">
+								<h2 style={{paddingLeft:'5%'}}>
+									{this.state.item.title}
+								</h2>
+							</Col>
+						</Row>
+						<br></br>
+						<Row>
+							<Col size="md-6">
+								<h5 style={{paddingLeft:'5%'}}>
+									${this.state.item.price}
+								</h5>
+									<br></br>
+								<h5 style={{paddingLeft:'5%'}}>
+									{this.state.item.location}
+									<hr></hr>
+								</h5>
+							</Col>
+						</Row>
+						<Row>
+							<Col size="md-4"></Col>
+							<Col size="md-4">
+								<img src={this.state.item.cloudUrl}/>
+							</Col>
+							<Col size="md-4"></Col>
+						</Row>
+							<br></br><br></br>
+						<Row>
+							<Col size="md-12">
+								<h6 style={{paddingLeft:'5%'}}>
+									{this.state.item.description}
+								</h6>
+								<br></br><br></br>
+							</Col>
+						</Row>
+						</div>
 				</Container>
 			</React.Fragment>
 		)
