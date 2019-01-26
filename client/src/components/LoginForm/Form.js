@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Form.css";
 import API from '../../utils/API';
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import {BrowserRouter as Router, Route, Link} from "react-router-dom";
 import SignUp from "../../pages/Sign-up"
 
 class Form extends Component {
@@ -9,7 +9,8 @@ class Form extends Component {
   state = {
 		users: [],
     username: "",
-		password: ""
+		password: "",
+		redirect: false
   };
 
   handleInputChange = event => {
@@ -24,19 +25,19 @@ class Form extends Component {
     // Updating the input's state
     this.setState({
       [name]: value
-    });
-  };
+		});
+	};
 
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
     if (!this.state.username || !this.state.password) {
-      alert("Fill out your Username and Password");
+			alert("Fill out your Username and Password");
+			window.location.reload();
     } else if (this.state.password.length < 6) {
       alert(
-        `Choose a more secure password ${this.state.username}`);
-    } else {
-      alert(`Hello ${this.state.username}`);
+				`Try a different password ${this.state.username}`);
+				window.location.reload();
 		}
 		
 		API.getUser({
@@ -58,6 +59,7 @@ class Form extends Component {
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
       <div>
+				<br></br>
        <div className="col-6" style={{margin: '0 auto'}}>
 				<h2>
           Login
@@ -88,7 +90,9 @@ class Form extends Component {
 
 					<br></br><br></br>
 
-          <button type="submit" onClick={this.props.login}>Login</button>
+          <button className="btn btn-light" type="submit" onClick={this.props.login}>
+						Login
+					</button>
 
 					<br></br><br></br>
 					</div>
@@ -99,6 +103,7 @@ class Form extends Component {
 						<a href="/sign-up">Sign Up</a>
 					</div>
 				</Router>
+				<br></br>
       </div>
 		</div>
     );

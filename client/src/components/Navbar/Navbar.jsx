@@ -13,7 +13,7 @@ class Navbar extends Component {
 	render() {
 		return (
 			
-			<nav className="navbar navbar-light bg-faded rounded navbar-toggleable-md">
+			<nav className="navbar navbar-nav navbar-light bg-faded rounded navbar-toggleable-md">
 				<button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#containerNavbar" aria-controls="containerNavbar" aria-expanded="false" aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon"></span>
 				</button>
@@ -35,16 +35,15 @@ class Navbar extends Component {
 									<Link className="nav-link" to="/add-item">Sell An Item</Link>
 								</li>
 								<li className="nav-item">
-									<button onClick={this.props.handleAuthLogout}>
+									<button className="btn btn-light" onClick={this.props.handleAuthLogout}>
 										Logout
 									</button>
 								</li>
+								<li className="nav-item">
+									<Link className="nav-link" to="/">Signed in as: {this.props.displayName}</Link>
+								</li>
 							</div>
 						}
-							<li className="nav-item">
-								<Link className="nav-link" to="/">{this.props.displayName}</Link>
-							</li>
-							
 					</ul>
 				</div>
 			</div>

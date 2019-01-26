@@ -10,7 +10,7 @@ class SignUp extends Component {
 				<Jumbotron2 title="Login." />
 				<div className="container">
 					<div className="row">
-						<div className="col-6" style={{background: 'pink', margin: '0 auto', textAlign: 'center'}}>
+						<div className="col-6" style={{margin: '0 auto', border: '2px solid grey', borderRadius: '5px', textAlign: 'center'}}>
 
 							<Form>
 

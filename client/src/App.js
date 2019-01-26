@@ -42,7 +42,7 @@ class AppRouter extends Component {
 		return (
 			<Router>
 				<React.Fragment>
-					<Navbar 
+					<Navbar
 						authenticated={this.state.authenticated} 
 						displayName={this.state.displayName}
 						handleAuthLogout={this.handleAuthLogout}
