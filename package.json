@@ -2,7 +2,7 @@
   "name": "mern",
 	"version": "1.0.0",
 	"engines": {
-    "npm": "10.3.0"
+    "node": "10.3.0"
   },
   "description": "",
   "main": "server.js",
