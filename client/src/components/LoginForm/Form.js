@@ -58,7 +58,7 @@ class Form extends Component {
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
       <div>
-       <div className="col-6" style={{background: 'pink', margin: '0 auto'}}>
+       <div className="col-6" style={{margin: '0 auto'}}>
 				<h2>
           Login
         </h2>

@@ -10,7 +10,7 @@ class Login extends Component {
 				<Jumbotron2 title="Login." />
 				<div className="container">
 					<div className="row">
-						<div className="col-6" style={{background: 'pink', margin: '0 auto', textAlign: 'center'}}>
+						<div className="col-6" style={{margin: '0 auto', textAlign: 'center'}}>
 
 							<Form handleAuthRes={this.props.handleAuthRes}>
 

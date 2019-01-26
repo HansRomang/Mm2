@@ -98,10 +98,10 @@ class Form extends Component {
     return (
       <div style={{margin: '0 auto'}}>
        
-			 <div className="col-6" style={{margin: '0 auto', border: '2px solid grey', borderRadius: '5px'}}>	
-			  <h2 style={{background: 'pink', margin: '0 auto'}}>
+			 <div className="col-6" style={{margin: '0 auto',marginTop:'5%', border: '2px solid grey', borderRadius: '5px'}}>	
+			  <h2 style={{ margin: '0 auto'}}>
           Add Item {this.state.firstName} {this.state.lastName}
-        </h2><br></br>
+        </h2><hr></hr><br></br>
 	
 			 
 			  <form className="form" style={{margin: '0 auto'}} onSubmit={this.handleFormSubmit}>
@@ -138,15 +138,16 @@ class Form extends Component {
           />
 					<br></br><br></br>
 					<div style={{display:'block', margin:"0 auto"}} className="user-asset-manager_one-asset user-asset-manager_new-asset-image">
-            <form  id="assetInput">
-              <input name="asset" type="file" accept="image/*" onChange={(e) => this.setImage(e)} style={{position:"absolute", width:"100%", height:"100%", opacity:"0.0"}}/>
+            <form id="assetInput">
+              <input name="asset" type="file" accept="image/*" onChange={(e) => this.setImage(e)} style={{position:"relative", width:"100%", height:"100%", opacity:"1.0", marginLeft:"30%"}}>
+							</input>
+							<img alt="uploadspace"style={{width:'25%', height:'25%'}} src={this.state.assetToUploadSrc}/>
+            
             </form>
-            <img alt="uploadspace"style={{width:'100%', height:'100%'}} src={this.state.assetToUploadSrc}/>
           </div>
 					<br></br>
-          <button type="submit">Submit</button>
         </form>
-					<button type="button" onClick={this.sendImageToServer}>upload image</button>
+					<button type="button" onClick={this.sendImageToServer}>Submit</button>
 				</div>
       </div>
     );
