@@ -32,6 +32,10 @@ class Items extends Component {
 		return (
 			<React.Fragment>
 				<Container>
+					<br></br>
+					<Link to="/marketplace" >
+						Back to Marketplace
+					</Link>
 					<br></br><br></br>
 					<div  style={{border: '2px solid grey', borderRadius: '5px'}}>
 						<Row>
@@ -70,7 +74,7 @@ class Items extends Component {
 								<br></br><br></br>
 							</Col>
 						</Row>
-						</div>
+					</div>
 				</Container>
 			</React.Fragment>
 		)
