@@ -13,12 +13,12 @@
     "client": "npm run start --prefix client",
     "seed": "node scripts/seedDB.js",
     "install": "cd client && npm install",
-    "build": "npm run build",
+    "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run-script build",
     "deploy": "gh-pages -d build",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "react-scripts build"
   },
   "author": "",
   "license": "ISC",
