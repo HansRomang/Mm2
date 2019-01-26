@@ -7,22 +7,27 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start": "react-scripts start",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "npm run start --prefix client",
     "seed": "node scripts/seedDB.js",
     "install": "cd client && npm install",
-    "build": "cd client && npm run build",
-    "heroku-postbuild":
-      "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+		"build": "react-scripts build",
+		"test": "react-scripts test --env=jsdom",
+		"eject": "react-scripts eject",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
+    "heroku-postbuild": "npm run build"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^3.5.0",
-    "nodemon": "^1.11.0"
-  },
+		"nodemon": "^1.11.0",
+	  "react-scripts": "1.0.7"
+	},
+	
   "dependencies": {
     "axios": "^0.16.2",
     "cloudinary": "^1.13.2",
