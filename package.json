@@ -1,33 +1,31 @@
 {
   "name": "mern",
-	"version": "1.0.0",
-	"engines": {
+  "version": "1.0.0",
+  "engines": {
     "node": "10.3.0"
   },
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "npm run start --prefix client",
     "seed": "node scripts/seedDB.js",
     "install": "cd client && npm install",
-		"build": "react-scripts build",
-		"test": "react-scripts test --env=jsdom",
-		"eject": "react-scripts eject",
-		"predeploy": "npm run build",
-		"deploy": "gh-pages -d build",
+    "build": "npm run build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run-script build",
+    "deploy": "gh-pages -d build",
     "heroku-postbuild": "npm run build"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^3.5.0",
-		"nodemon": "^1.11.0",
-	  "react-scripts": "1.0.7"
-	},
-	
+    "nodemon": "^1.11.0"
+  },
   "dependencies": {
     "axios": "^0.16.2",
     "cloudinary": "^1.13.2",
@@ -35,11 +33,12 @@
     "express": "^4.16.3",
     "if-env": "^1.0.4",
     "mongoose": "^5.0.17",
-		"passport": "^0.4.0",
-		"react": "^16.5.2",
+    "passport": "^0.4.0",
+    "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-mdl": "^1.11.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.5"
-  }
+    "react-scripts": "1.1.5",
+    "yarn": "^1.13.0"
+	}
 }
