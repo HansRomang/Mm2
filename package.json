@@ -35,6 +35,11 @@
     "express": "^4.16.3",
     "if-env": "^1.0.4",
     "mongoose": "^5.0.17",
-    "passport": "^0.4.0"
+		"passport": "^0.4.0",
+		"react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-mdl": "^1.11.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.5"
   }
 }
