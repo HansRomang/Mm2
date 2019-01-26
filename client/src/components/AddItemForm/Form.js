@@ -57,6 +57,7 @@ class Form extends Component {
 			location: ""
     });
 	};
+
 	setImage = (e) => {
     if(this.overLimit){
       alert("Max assets reached. Delete an asset to upload something new.")
@@ -73,9 +74,9 @@ class Form extends Component {
       }
       reader.readAsDataURL(img);
       let src = window.URL.createObjectURL(img)
-      self.setState({assetToUploadSrc:src, showLoadingModel:false, loadingModelHeader:null})
+			self.setState({assetToUploadSrc:src, showLoadingModel:false, loadingModelHeader:null})
+			this.target.value = null;
     })
-    e.target.value = ''
 	}
 	sendImageToServer = () => {
     if(!this.state.assetToUpload){return}
@@ -94,7 +95,6 @@ class Form extends Component {
   }
 
   render() {
-    // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
       <div style={{margin: '0 auto'}}>
        
@@ -142,7 +142,7 @@ class Form extends Component {
 					<br></br><br></br>
 					<div style={{display:'block', margin:"0 auto"}} className="user-asset-manager_one-asset user-asset-manager_new-asset-image">
             <form id="assetInput">
-              <input name="asset" type="file" accept="image/*" onChange={(e) => this.setImage(e)} style={{position:"relative", width:"100%", height:"100%", opacity:"1.0", marginLeft:"30%"}}>
+              <input name="asset" type="file" accept="image/*" onChange={(e) => this.setImage(e)} style={{position:"relative", width:"auto", height:"100%", opacity:"1.0", marginLeft:"auto"}}>
 							</input>
 							<img alt="uploadspace"style={{width:'25%', height:'25%'}} src={this.state.assetToUploadSrc}/>
             
@@ -150,7 +150,8 @@ class Form extends Component {
           </div>
 					<br></br>
         </form>
-					<button type="button" onClick={this.sendImageToServer}>Submit</button>
+					<button type="button" className="btn btn-light" onClick={this.sendImageToServer}>Submit</button>
+					<br></br><br></br>
 				</div>
       </div>
     );

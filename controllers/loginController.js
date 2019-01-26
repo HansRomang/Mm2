@@ -36,6 +36,5 @@ module.exports = {
 		.then(user => {
 			res.send({user:user, status:200, message:"Login Successful!"})
 		})
-
 	}
 };

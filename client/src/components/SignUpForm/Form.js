@@ -36,7 +36,8 @@ class Form extends Component {
       alert(
         `Choose a more secure password ${this.state.username}`);
     } else {
-      alert(`Hello ${this.state.username}`);
+			alert(`Hello: ${this.state.username}`);
+			document.location.href="/login/";
 		}
 		
 		API.createUser({
@@ -56,10 +57,10 @@ class Form extends Component {
 
   render() {
 		console.log(this)
-    // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
       <div>
-       <div className="col-6" style={{background: 'pink', margin: '0 auto'}}>
+				<br></br>
+       <div className="col-6" style={{margin: '0 auto'}}>
 				<h2>
           Create your account
         </h2>
@@ -110,7 +111,7 @@ class Form extends Component {
 
 					<br></br><br></br>
 
-          <button type="submit">Sign Up</button>
+          <button className="btn btn-light" type="submit">Sign Up</button>
 
 					<br></br><br></br>
 					</div>
